@@ -57,10 +57,33 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto auto auto;
   grid-gap: 10px;
   background-color: orange;
   padding: 10px;
+}
+
+.grid-container-1 {
+  grid-template-columns: auto;
+}
+
+.grid-container-2 {
+  grid-template-columns: auto auto;
+}
+
+.grid-container-3 {
+  grid-template-columns: auto auto auto;
+}
+
+.grid-container-4 {
+  grid-template-columns: auto auto auto auto;
+}
+
+.grid-container-5 {
+  grid-template-columns: auto auto auto auto auto;
+}
+
+.grid-container-6 {
+  grid-template-columns: auto auto auto auto auto auto;
 }
 
 .grid-container > div {

@@ -6,20 +6,29 @@
     <h1 class="display-4">Welcome</h1>
 </div>
 
-<div class="grid-container">
-  <div><i class="fas fa-arrow-circle-up"></i></div>
-  <div></div>
-  <div></div>  
-  <div><i class="fas fa-bomb"></i></div>
-  <div></div>
-  <div><i class="fas fa-bomb"></i></div>  
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>  
-  <div><i class="fas fa-bomb"></i></div>
-  <div></div>
-  <div></div>  
-  <div><i class="fas fa-bomb"></i></div>
-  <div><i class="fas fa-door-open"></i></div>
+@{
+    Game game = new Game("settings.xml");
+}
+<div class="grid-container grid-container-@game.grid.width">
+    @for(int i =0; i < game.grid.height; i++)
+    {
+      @for(int j =0; j < game.grid.width; j++)
+      {
+        Position p = new Position(j,i);
+        <div>
+        @if (p.Equals(game.turtle.position)){
+          <i class="fas fa-arrow-circle-up"></i>
+        }
+        else if (p.Equals(game.exit.position)){
+          <i class="fas fa-door-open"></i>
+        }
+
+        @foreach(Mine m in game.mines){
+          if (p.Equals(m.position)){
+            <i class="fas fa-bomb"></i>
+          }
+        }
+        </div>      
+      }
+    }
 </div>
