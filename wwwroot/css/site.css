@@ -58,7 +58,7 @@ body {
 .grid-container {
   display: grid;
   grid-gap: 10px;
-  background-color: orange;
+  background-color: goldenrod;
   padding: 10px;
 }
 
